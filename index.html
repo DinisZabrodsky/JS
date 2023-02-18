@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.min.css">
+    <title>JS</title>
+</head>
+<body>
+    <header>
+        <main class="header-menu">
+            <ul class="header-list">
+                <li class="list"><a href="./index.html">Головна</a></li>
+                <li class="list"><a href="./efects.html">Ефекти</a></li>
+            </ul>
+
+        </main>
+    </header>
+
+
+    <form action="form" autocomplete="off">
+        <label for="inp"> Число
+            <input data-value type="text" name="inputOne" placeholder="ведіть число">
+        </label>
+
+        <button type="button" data-add>Надіслати</button>
+        <button type="button" data-reset>Очистити</button>
+    </form>
+    <p class="js-output">Сума <span>0</span></p>
+
+    <script src="./js/script.js" type="module"></script>
+</body>
+</html>
