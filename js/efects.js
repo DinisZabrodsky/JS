@@ -81,17 +81,29 @@ class Use {
     useEfect() {
         if (this.nCourse >= course) {
 
-            console.log(`це працює {this.bace}`)
-            //     Hero.[this.name1] += this.value1;
-            //     if (this.name2 !== undefined) {
-            //         Hero.[this.name2] += this.value2;
-            //     }
+            console.log(`це працює`)
+                // Hero.[this.name1] += this.value1;
+                // if (this.name2 !== undefined) {
+                //     Hero.[this.name2] += this.value2;
+                // }
         }
     }
 }
 
 const efectOne = new Use({
     rootSelector: '.efects-button-1',
+    name1: 'health',
+    value1: 50,
+});
+
+const efectTwo = new Use({
+    rootSelector: '.efects-button-2',
+    name1: 'health',
+    value1: 50,
+})
+
+const efectЕhree = new Use({
+    rootSelector: '.efects-button-3',
     name1: 'health',
     value1: 50,
 })
