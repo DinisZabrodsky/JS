@@ -57,12 +57,15 @@
   transition: -webkit-transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  background-position: center;
+  background-size: cover;
 }
 .efects-list button:hover, .efects-list button:focus {
   -webkit-transform: scale(105%);
           transform: scale(105%);
   -webkit-box-shadow: 0px 0.5px 5px #343434;
           box-shadow: 0px 0.5px 5px #343434;
+  cursor: pointer;
 }
 
 .efects-button-move {
@@ -88,4 +91,16 @@
   cursor: pointer;
   -webkit-box-shadow: 0px 0.5px 5px #343434;
           box-shadow: 0px 0.5px 5px #343434;
+}
+
+.efects-button-1 {
+  background-image: url(../img/3272398743d01e8b426dc469210cc177.jpg);
+}
+
+.efects-button-2 {
+  background-image: url(../img/potion_bottle_example.png);
+}
+
+.efects-button-3 {
+  background-image: url(../img/vera-velichko-potions-liquid-fire-wallpaper-preview.jpg);
 }/*# sourceMappingURL=efects.css.map */
