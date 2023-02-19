@@ -46,7 +46,8 @@ let course = 0;
 const nextCourse = document.querySelector('.efects-button-move').addEventListener('click', () => {
     console.log(course);
     course += 1;
-    Hero.regeneration();
+
+    regeneration();
 });
 
 
@@ -65,7 +66,6 @@ class Use {
         this.name1 = name1;
         this.name2 = name2;
 
-        // this.useEfect();
         this.getRefs(rootSelector);
     }
 
@@ -80,17 +80,15 @@ class Use {
 
     useEfect() {
         if (this.nCourse >= course) {
+            console.log(Hero[this.name1]);
+            Hero[this.name1] += this.value1;
+            console.log(Hero[this.name1]);
 
-
-            console.log(this.name1);
-            console.log(this.value1);
-            console.log(this.name2);
-            console.log(this.value2);
-
-            // Hero.[this.name1] += this.value1;
-            // if (this.name2 !== undefined) {
-            //     Hero.[this.name2] += this.value2;
-            // }
+            if (this.name2 !== undefined) {
+                console.log(Hero[this.name2]);
+                Hero[this.name2] += this.value2;
+                console.log(Hero[this.name2]);
+            }
         }
     }
 }
@@ -111,9 +109,7 @@ const efectЕhree = new Use({
     rootSelector: '.efects-button-3',
     name1: 'maxHealth',
     name2: 'maxMana',
-    value1: 50,
-    value2: 25,
+    value1: -50,
+    value2: -25,
     nCourse: 3,
 })
-
-console.log(efectOne);
