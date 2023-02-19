@@ -47,7 +47,7 @@ const nextCourse = document.querySelector('.efects-button-move').addEventListene
     console.log(course);
     course += 1;
 
-    regeneration();
+    Hero.regeneration();
 });
 
 
