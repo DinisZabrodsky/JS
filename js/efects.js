@@ -40,7 +40,7 @@ const Hero = {
 }
 
 // Лічільник ходів, лежить у глобальній області видимості, адже до його будуть звертатись безліч функцій
-let course = 0;
+let course = 5;
 
 // Завершення ходу
 const nextCourse = document.querySelector('.efects-button-move').addEventListener('click', () => {
