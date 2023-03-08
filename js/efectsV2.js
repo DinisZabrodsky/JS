@@ -1,54 +1,101 @@
+const button = document.querySelector('.button-container');
+button.addEventListener('click', onClickButton);
+
+function onClickButton(event) {
+   if (event.target.nodeName !== 'BUTTON') {
+      return;
+   };
+
+   const base = {
+      type: event.target.dataset.type,
+      damage: event.target.dataset.damage,
+      time: event.target.dataset.time,
+      id: 'id000001',
+   }
+
+   applyEffect(base);
+};
+
+function applyEffect({type, damage, time, id}) {
+   console.log(type, damage, time, id);
+
+   const typeFunction = baceEffects[type]
+   typeFunction({ damage, time, id });
+
+   console.log(heroOnArena[id]);
+}
+  
+
+
 const baceEffects = {
-   кровотеча: "втрата здоров'я протягому певного часу. Сюди можна впихнути функцію яка буде змінювати характеристики персонажа",
-   втома: "Максимальна кількість витривалості зменшується на певну кількість очків",
+   
+   bleeding: function ({ damage, id }) {
+      console.log(`Персонаж отримує пошкодження здоров'я в кількості ${damage} очків здоров'я`);
+      heroOnArena[id].health -= damage; 
+   },
+   help: function ({ damage, id }) {
+      console.log(`Персонаж підвищує рівень здоров'я на ${damage}`);
+      heroOnArena[id].health += Number(damage); 
+   },
+   fire: function ({ damage, time, id }) {
+      console.log(`Персонаж отримує пошкодження в ${damage} хітів від горіння`);
+      heroOnArena[id].health -= damage; 
+   },
 }
 
-// let idUserValue = 0;
-
-// const idUser = () => idUser += 1;
-
-class Pers {
-   constructor ({name}) {
-      this.name = name;
-      this.effects = [];
-
-   }
-
-   putEfects ({type, damage = 0, time = 1}) {
-      if (time  > 1) {
-         
-         console.log(`${this.name} отримує пошкодження ${damage} від ${type}. Ефект діятиме ще ${time} ходів`)
-         console.log(baceEffects[type]);
-         
-         const newEffects = { type, damage, time };
-         console.log(newEffects)
-         this.effects.push(newEffects)
-      }
-   }
-
-
-}
-
-// class Arena {
-//    constructor({arena}) {
-//       this.arena = arena;
-//       this.member = []
-//    }
-// }
-
-
-
-const valentin = new Pers({name: 'Valentin'});
-// console.log(valentin);
-// console.log(valentin.efects);
-valentin.putEfects({type:'кровотеча', damage: 30, time: 5});
-console.log(valentin.effects);
-
-// const arenaOne = new Arena({ arena: 'FirstArena' });
-// console.log(arenaOne);
-// arenaOne.member.push(valentin);
-// console.log(arenaOne);
-
-// arenaOne.member[0].time = 3;
-
-// console.log(valentin);
+const heroOnArena = {
+   id000001: {
+      health: 70,
+      maxHealth: 110,
+      healthRepair: 13,
+      mana: 10,
+      maxMana: 125,
+      manaRepair: 7,
+      energy: 10,
+      maxEnergy: 100,
+      energyRepair: 15,
+      characteristics: {
+         power: 47,
+         protection: 34,
+         attack: 44,
+         powerOfMagic: 47,
+         luck: 3,
+      },
+   },
+   id000002: {
+      health: 70,
+      maxHealth: 110,
+      healthRepair: 13,
+      mana: 10,
+      maxMana: 125,
+      manaRepair: 7,
+      energy: 10,
+      maxEnergy: 100,
+      energyRepair: 15,
+      characteristics: {
+         power: 47,
+         protection: 34,
+         attack: 44,
+         powerOfMagic: 47,
+         luck: 3,
+      },
+   },
+   id000003: {
+      health: 70,
+      maxHealth: 110,
+      healthRepair: 13,
+      mana: 10,
+      maxMana: 125,
+      manaRepair: 7,
+      energy: 10,
+      maxEnergy: 100,
+      energyRepair: 15,
+      characteristics: {
+         power: 47,
+         protection: 34,
+         attack: 44,
+         powerOfMagic: 47,
+         luck: 3,
+      },
+   },
+};
